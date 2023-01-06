@@ -1,0 +1,58 @@
+#navigation {
+    text-align: center;
+}
+body{
+    background-color: gray;
+}
+#navigation li{
+    display: inline;
+    font-family:Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: larger;
+    
+    }
+#navigation a{
+    margin:0;
+    padding: 0 25px 0 25px;
+    
+}
+#navigation a:hover{
+    color: rgb(214, 212, 212);
+}
+#navigation ul{
+    list-style-type:none;
+    background-color: grey;
+    overflow: hidden;
+}
+.active {
+background-color: rgb(206, 206, 206);
+}
+#naslov{
+    text-align: center;
+    text-decoration:underline;
+    color: black;
+    font-style: italic;
+    font-family:Arial, Helvetica, sans-serif;
+}
+#naslov a:visited{
+    color: black;
+}
+@media only screen and  (min-width: 700px) { 
+    header {
+        background-image: url("51792-HEADER-1-T.webp");
+        height: 330px;
+    }
+}
+@media only screen and  (min-width: 990px) { 
+    header {
+        background-image: url("51792-HEADER-1-D.webp");
+        height: 100px;
+    }
+    header h1 {
+        font-size: 30px;
+    }
+}
+.logo{
+    display: inline;
+    float: left;
+}

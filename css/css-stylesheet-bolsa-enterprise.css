@@ -1,0 +1,209 @@
+#navigation {
+    text-align: center;
+}
+body{
+    border-style:double;
+    border:1px 1px 1px 1px;
+    background-color: gray;
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+#navigation li{
+    display: inline;
+    font-family:Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: medium;
+    }
+#navigation a{
+    margin:0;
+    padding: 0 5px 0 5px;
+    
+}
+#navigation a:hover{
+    color: rgb(214, 212, 212);
+}
+#navigation a:visited{
+    color:white;
+}
+#navigation ul{
+    list-style-type:none;
+    background-color: grey;
+    overflow: hidden;
+}
+.active {
+background-color: rgb(206, 206, 206);
+}
+#naslov{
+    text-align: center;
+    text-decoration:underline;
+    color: black;
+    font-style: italic;
+    font-family:Arial, Helvetica, sans-serif;
+}
+#naslov a:visited{
+    color: black;
+}
+
+.logo{
+    display: inline;
+    margin-right: 50%;
+}
+img.thumbnail{
+    width:200px;
+    float:left;
+    margin:0 10px 0 0;
+    border:3px solid black;
+}
+footer{
+    margin:3px 3px 3px 3px;
+}
+
+.divaro {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+  }
+.divaro img{
+    width: 300px;
+    height: 150px;
+    margin: 10px;
+}
+.prbl {
+    border: solid 1px black;
+  }
+  .prbl p{
+    text-align: center;
+  }
+
+
+/*Sljedeći dijelovi se odnose na određene slike koje sam morao konfigurirati zbog različitih rezolucija */
+/*Ovaj dio se odnosi na uređaje čiji je ekran veći od 982 px */
+@media only screen and (min-width: 982px) {
+    img.thumbnail{
+        width: 200px;  
+        float:left;     
+        margin:0 10px 10px 0;
+        border:3px solid black;
+    }
+    img.home_slika{
+        width:25%; 
+        margin: 0 0 0 37.5%;
+    }
+    #ggl{
+        width: 75%;
+        height: 500px;
+    }
+    textarea{
+        width:35%;
+        height:100px;
+    }
+    #jutub{
+        height:auto;
+        width:auto;
+    }
+    #slike{
+        text-align: left;
+        
+    }
+    #slike figure img{
+        height: 300px;
+        border: 2px;
+        border-style:solid;
+        align-items: center;
+        display:inline-flex
+    }
+    .tblc img{
+            height: 212px;
+            border: 2px;
+            border-style:solid;
+            align-items: center;
+            display:inline-block;
+    }
+}
+/*Ovaj dio se odnosi na uređaje čiji je ekran manji od 981 px */
+
+@media only screen and (min-width: 490) and (max-width:981px) {
+    img.thumbnail{
+        width: 200px;  
+        float:left;     
+        margin:0 10px 10px 0;
+        border:3px solid black;
+    }
+    img.home_slika{
+        width:50%; 
+        margin: 0 0 0 30%;
+    }
+    #ggl{
+        width: 75%;
+        height: 500px;
+    }
+    textarea{
+        width:50%;
+        height:100px;
+    }
+    #jutub{
+        height:auto;
+        width:auto;
+    }
+    .tblc img{
+        height: 100px;
+        border: 2px;
+        border-style:solid;
+        align-items: center;
+        display:inline-block;
+        
+}
+}
+/*Ovaj dio se odnosi na uređaje čiji je ekran manji od 300 px */
+
+@media only screen and (max-width:490px) {
+    img.thumbnail{
+        width: 250px;  
+        float:left;     
+        margin:0 10px 10px 0;
+        border:3px solid black;
+    }
+    img.home_slika{
+        width:75%; 
+        margin: 0 0 0 15%;
+    }
+    #navigation li{
+        display: inline;
+        font-family:Arial, Helvetica, sans-serif;
+        color: white;
+        font-size:12px;
+        }
+    #navigation a{
+        margin:0;
+        padding: 0 3px 0 3px;
+        }
+    #ggl{
+        width: 75%;
+        height: 150px;
+    }
+
+    textarea{
+        width:75%;
+        height:150px;
+    }
+    #country{
+        width:75%;
+    }
+    #jutub{
+        height:auto;
+        width:auto;
+    }
+    .tblc img{
+        height: 100px;
+        border: 2px;
+        border-style:solid;
+        align-items: center;
+        display:inline-block;
+}
+}
+
