@@ -1,0 +1,94 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>::: VVG pretinac :::</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("login-form").addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevent form submission
+
+                // Get the entered username and password
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("pass").value;
+
+                // Perform login validation using AJAX
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "/login", true);
+                xhr.setRequestHeader("Content-Type", "application/json");
+
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        if (response.success) {
+                            alert("Login successful!");
+                        } else {
+                            alert("Invalid username or password.");
+                        }
+                    }
+                };
+
+                var data = JSON.stringify({ "username": username, "password": password });
+                xhr.send(data);
+            });
+        });
+    </script>
+</head>
+<body>
+    <form id="login-form" action="/login" method="POST">
+        <div align="center">
+            <center>
+                <table style="border-collapse: collapse" width="100%" height="100%" cellspacing="0" cellpadding="0" bordercolor="#111111" border="0">
+                    <tbody>
+                        <tr>
+                            <td width="25%" height="100%" align="center">&nbsp;</td>
+                            <td width="50%" height="100%" align="center">
+                                <fieldset style="padding: 10px; font-family:Verdana; font-size:10px; color: #BBBBBB; border: 1px solid #BBBBBB;">
+                                    <legend>.: <b>VVG Pretinac - LOGIN</b> :. </legend>
+                                    <table style="border-collapse: collapse" width="100%" cellspacing="0" cellpadding="3" bordercolor="#111111" border="0">
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="2" width="100%" height="20">
+                                                    <p align="center">
+                                                        <img src="https://pretinac.vvg.hr/img/vvg-logo-2014-header-blue.png" width="350" height="75" border="0">
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" width="100%" height="20" align="center"></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="50%" height="20" align="right">Korisničko ime:</td>
+                                                <td width="50%" height="20">
+                                                    <input name="username" type="text" class="box" id="username" style="width: 103px;" size="30">@vvg.hr</td>
+                                            </tr>
+                                            <tr>
+                                                <td width="50%" height="20" align="right">Lozinka:</td>
+                                                <td width="50%" height="20">
+                                                    <input name="password" type="password"  id="pass" style="width: 103px;" maxlength="30" value="" size="20"></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="50%" height="20">&nbsp;</td>
+                                                <td width="50%" height="20">&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" width="100%" height="20">
+                                                    <p align="center"><input type="submit" value="Log in" name="btn_login"></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="50%" height="20">&nbsp;</td>
+                                                <td width="50%" height="20">&nbsp;</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </fieldset>
+                            </td>
+                            <td width="25%" height="100%" align="center">&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </center>
+        </div>
+    </form>
+</body>
+</html>
