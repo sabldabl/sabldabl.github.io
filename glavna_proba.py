@@ -1,10 +1,7 @@
-from flask import Flask, render_template, request, jsonify
 import json
 import socket
 import platform
 import uuid
-
-app = Flask(__name__)
 
 def get_ip_address():
     hostname = socket.gethostname()
@@ -23,11 +20,6 @@ def get_os():
     operating_system = platform.platform()
     return operating_system
 
-@app.route('/')
-def index():
-    return render_template('index.html')
-
-@app.route('/login', methods=['POST'])
 def login():
     username = request.json['username']
     password = request.json['password']
@@ -57,6 +49,3 @@ def login():
             return jsonify({"success": True})
 
     return jsonify({"success": False})
-
-if __name__ == '__main__':
-    app.run()
